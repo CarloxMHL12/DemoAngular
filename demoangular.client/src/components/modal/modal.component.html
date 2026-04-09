@@ -59,7 +59,9 @@
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancelar</button>
 
-  <button mat-raised-button color="primary" [mat-dialog-close]="usuario">
+  <button mat-raised-button color="primary" [mat-dialog-close]="usuarioForm.valid ? usuarioForm.value : null"
+          [disabled]="usuarioForm.invalid">
     Guardar
   </button>
+
 </mat-dialog-actions>
