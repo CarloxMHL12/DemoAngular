@@ -26,7 +26,7 @@ export class ModalComponent implements OnInit {
     };
 
     this.usuarioForm = new FormGroup({
-      nombre: new FormControl(usuario.nombre, [Validators.required, Validators.minLength(5)]),
+      nombre: new FormControl(usuario.nombre, [Validators.required, Validators.minLength(3)]),
       apellidoPaterno: new FormControl(usuario.apellidoPaterno, Validators.required),
       apellidoMaterno: new FormControl(usuario.apellidoMaterno),
       telefono: new FormControl(usuario.telefono, [Validators.required, Validators.pattern('^[0-9]{10}$')]),
