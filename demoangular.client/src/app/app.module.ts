@@ -16,6 +16,7 @@ import { ModalComponent } from '../components/modal/modal.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { MatDividerModule } from '@angular/material/divider';
     AppComponent, UsuariosComponent, ModalComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, MatDividerModule ,MatSnackBarModule, MatIconModule, MatDialogModule, BrowserAnimationsModule, MatInputModule, MatButtonModule, MatCardModule, MatTableModule, MatFormFieldModule, MatToolbarModule
+    BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule ,MatDividerModule ,MatSnackBarModule, MatIconModule, MatDialogModule, BrowserAnimationsModule, MatInputModule, MatButtonModule, MatCardModule, MatTableModule, MatFormFieldModule, MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
