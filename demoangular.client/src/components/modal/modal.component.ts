@@ -10,7 +10,14 @@ import { Usuario } from '../../models/usuario';
 })
 export class ModalComponent implements OnInit {
 
-  usuarioForm!: FormGroup;
+  usuarioForm!: FormGroup<{
+    nombre: FormControl<string | null>;
+    apellidoPaterno: FormControl<string | null>;
+    apellidoMaterno: FormControl<string | null>;
+    telefono: FormControl<string | null>;
+    correo: FormControl<string | null>;
+    username: FormControl<string | null>;
+  }>;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 

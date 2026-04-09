@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+
 @Component({
 
   selector: 'app-usuarios',

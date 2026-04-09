@@ -10,45 +10,45 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Nombre</mat-label>
-      <input matInput [formControl]="f.nombre">
-      <mat-error *ngIf="f.nombre.invalid && f.nombre.touched">
+      <input matInput [formControl]="f['nombre']">
+      <mat-error *ngIf="f['nombre'].invalid && f['nombre'].touched">
         Nombre es obligatorio y mínimo 3 caracteres
       </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Apellido Paterno</mat-label>
-      <input matInput [formControl]="f.apellidoPaterno">
-      <mat-error *ngIf="f.apellidoPaterno.invalid && f.apellidoPaterno.touched">
+      <input matInput [formControl]="f['apellidoPaterno']">
+      <mat-error *ngIf="f['apellidoPaterno'].invalid && f['apellidoPaterno'].touched">
         Apellido Paterno es obligatorio
       </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Apellido Materno</mat-label>
-      <input matInput [formControl]="f.apellidoMaterno">
+      <input matInput [formControl]="f['apellidoMaterno']">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Teléfono</mat-label>
-      <input matInput [formControl]="f.telefono">
-      <mat-error *ngIf="f.telefono.invalid && f.telefono.touched">
+      <input matInput [formControl]="f['telefono']">
+      <mat-error *ngIf="f['telefono'].invalid && f['telefono'].touched">
         Teléfono obligatorio, solo 10 números
       </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Correo</mat-label>
-      <input matInput [formControl]="f.correo">
-      <mat-error *ngIf="f.correo.invalid && f.correo.touched">
+      <input matInput [formControl]="f['correo']">
+      <mat-error *ngIf="f['correo'].invalid && f['correo'].touched">
         Ingresa un correo válido
       </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Username</mat-label>
-      <input matInput [formControl]="f.username">
-      <mat-error *ngIf="f.username.invalid && f.username.touched">
+      <input matInput [formControl]="f['username']">
+      <mat-error *ngIf="f['username'].invalid && f['username'].touched">
         Username obligatorio, mínimo 4 caracteres
       </mat-error>
     </mat-form-field>
