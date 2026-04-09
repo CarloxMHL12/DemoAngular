@@ -17,11 +17,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConfirmDialogComponent } from '../components/confirm-dialog/confirm-dialog.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent, UsuariosComponent, ModalComponent
+    AppComponent, UsuariosComponent, ModalComponent, ConfirmDialogComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule ,MatDividerModule ,MatSnackBarModule, MatIconModule, MatDialogModule, BrowserAnimationsModule, MatInputModule, MatButtonModule, MatCardModule, MatTableModule, MatFormFieldModule, MatToolbarModule

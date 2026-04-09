@@ -42,5 +42,5 @@ export class ModalComponent implements OnInit {
     });
   }
 
-  get f() { return this.usuarioForm.controls; }
+  get formulario() { return this.usuarioForm.controls; }
 }

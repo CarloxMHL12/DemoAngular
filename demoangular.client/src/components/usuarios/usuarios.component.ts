@@ -4,6 +4,7 @@ import { Usuario } from '../../models/usuario';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -71,12 +72,24 @@ export class UsuariosComponent implements OnInit {
   }
 
   UsuarioDelete(id: number) {
-    this.usuarioService.UsuarioDelete(id);
-    this.usuarios = this.usuarioService.UsuarioGetAll();
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '350px',
+      data: {
+        mensaje: '¿Estás seguro de que deseas eliminar este usuario?'
+      }
+    });
 
-    this.snackBar.open('Usuario Eliminado correctamente', 'Cerrar', {
-      duration: 3000
+    dialogRef.afterClosed().subscribe((resultado) => {
+      if (resultado) {
+        this.usuarioService.UsuarioDelete(id);
+        this.usuarios = this.usuarioService.UsuarioGetAll();
+
+        this.snackBar.open('Usuario eliminado correctamente', 'Cerrar', {
+          duration: 3000
+        });
+      }
     });
   }
+
 
 }
