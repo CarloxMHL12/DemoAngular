@@ -1,0 +1,147 @@
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+mat-card {
+  border-radius: 12px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.header-card {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-card {
+  padding: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-actions {
+  text-align: right;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.user-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+}
+
+  .user-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-size: 20px;
+}
+
+mat-card {
+  border-radius: 16px;
+}
+
+mat-toolbar {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+button[mat-raised-button] {
+  border-radius: 8px;
+}
+
+.toolbar {
+  padding: 0 20px;
+  background: linear-gradient(135deg, #283593, #303F9F);
+  color: white;
+}
+
+.toolbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.avatar {
+  background: linear-gradient(135deg, #1A237E, #6366f1);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+mat-card-content p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  color: #374151;
+}
+
+.toolbar-content .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.toolbar-content button {
+  background: #10b981;
+  color: white;
+}
+
+  .toolbar-content button:hover {
+    background: #059669;
+  }

@@ -1,0 +1,52 @@
+<h2 mat-dialog-title class="modal-title">
+  <mat-icon>
+    {{ data.modo === 'editar' ? 'edit' : 'person_add' }}
+  </mat-icon>
+  {{ data.modo === 'editar' ? 'Editar Usuario' : 'Nuevo Usuario' }}
+</h2>
+
+<mat-dialog-content class="modal-content">
+
+  <div class="form-grid">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="usuario.nombre">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido Paterno</mat-label>
+      <input matInput [(ngModel)]="usuario.apellidoPaterno">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido Materno</mat-label>
+      <input matInput [(ngModel)]="usuario.apellidoMaterno">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Teléfono</mat-label>
+      <input matInput [(ngModel)]="usuario.telefono">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Correo</mat-label>
+      <input matInput [(ngModel)]="usuario.correo">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="usuario.username">
+    </mat-form-field>
+
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+
+  <button mat-raised-button color="primary" [mat-dialog-close]="usuario">
+    Guardar
+  </button>
+</mat-dialog-actions>

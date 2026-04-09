@@ -1,0 +1,81 @@
+import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../../services/usuario.service';
+import { Usuario } from '../../models/usuario';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+@Component({
+
+  selector: 'app-usuarios',
+  templateUrl: './usuarios.component.html',
+  styleUrls: ['./usuarios.component.css']
+
+})
+export class UsuariosComponent implements OnInit {
+
+  usuarios: Usuario[] = [];
+  nuevoUsuario: Usuario = {
+    id: 0,
+    nombre: '',
+    apellidoPaterno: '',
+    apellidoMaterno: '',
+    telefono: '',
+    correo: '',
+    username: ''
+  };
+
+  constructor(private usuarioService: UsuarioService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
+
+
+  ngOnInit() {
+    this.usuarios = this.usuarioService.UsuarioGetAll();
+  }
+
+  abrirModal() {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '500px',
+      data: { modo: 'crear' }
+    });
+
+    dialogRef.afterClosed().subscribe((usuario: Usuario) => {
+      if (usuario) {
+        usuario.id = Date.now();
+        this.usuarioService.UsuarioAdd(usuario);
+        this.usuarios = this.usuarioService.UsuarioGetAll();
+
+        this.snackBar.open('Usuario Agregado correctamente', 'Cerrar', {
+          duration: 3000
+        });
+      }
+    });
+  }
+
+  UsuarioUpdate(usuario: Usuario) {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '500px',
+      data: { modo: 'editar', usuario }
+    });
+
+    dialogRef.afterClosed().subscribe((usuarioEditado: Usuario) => {
+      if (usuarioEditado) {
+        this.usuarioService.UsuarioUpdate(usuarioEditado);
+        this.usuarios = this.usuarioService.UsuarioGetAll();
+
+        this.snackBar.open('Usuario Actualizado correctamente', 'Cerrar', {
+          duration: 3000
+        });
+      }
+    });
+  }
+
+  UsuarioDelete(id: number) {
+    this.usuarioService.UsuarioDelete(id);
+    this.usuarios = this.usuarioService.UsuarioGetAll();
+
+    this.snackBar.open('Usuario Eliminado correctamente', 'Cerrar', {
+      duration: 3000
+    });
+  }
+
+}

@@ -1,0 +1,24 @@
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4f46e5;
+}
+
+mat-dialog-container {
+  border-radius: 16px !important;
+  background: #f9fafb;
+}
+
+button[color="primary"] {
+  background: #4f46e5;
+  color: white;
+}
+
+  button[color="primary"]:hover {
+    background: #4338ca;
+  }
+
+button[mat-dialog-close] {
+  background: #e5e7eb; 
+}

@@ -1,0 +1,57 @@
+<mat-toolbar color="primary" class="toolbar">
+  <div class="toolbar-content">
+    <div class="title">
+      <mat-icon>groups</mat-icon>
+      <span>Gestión de Usuarios</span>
+    </div>
+
+    <button mat-raised-button color="accent" (click)="abrirModal()">
+      <mat-icon>person_add</mat-icon>
+      Nuevo Usuario
+    </button>
+  </div>
+</mat-toolbar>
+
+
+<div class="container">
+
+
+  <div class="cards-container">
+    <mat-card class="user-card" *ngFor="let usuario of usuarios">
+
+      <mat-card-header>
+        <div mat-card-avatar class="avatar">
+          {{ usuario.nombre.charAt(0) }}
+        </div>
+
+        <mat-card-title>
+          {{ usuario.nombre }} {{ usuario.apellidoPaterno }}
+        </mat-card-title>
+
+        <mat-card-subtitle>
+          @{{ usuario.username }}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+        <p><mat-icon>phone</mat-icon> {{ usuario.telefono }}</p>
+        <p><mat-icon>email</mat-icon> {{ usuario.correo }}</p>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-icon-button color="primary" (click)="UsuarioUpdate(usuario)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" (click)="UsuarioDelete(usuario.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+
+    </mat-card>
+
+  </div>
+
+</div>
