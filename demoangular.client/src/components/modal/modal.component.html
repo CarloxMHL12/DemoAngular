@@ -53,6 +53,32 @@
       </mat-error>
     </mat-form-field>
 
+    <div class="avatar-upload">
+
+      <div class="avatar-preview" (click)="fileInput.click()">
+        <img *ngIf="usuarioForm.value.foto; else placeholder"
+             [src]="usuarioForm.value.foto">
+
+        <ng-template #placeholder>
+          <span class="initial">
+            {{ formulario['nombre'].value?.charAt(0) || '?' }}
+          </span>
+        </ng-template>
+
+        <div class="overlay">
+          <mat-icon>photo_camera</mat-icon>
+        </div>
+      </div>
+
+      <input #fileInput type="file"
+             (change)="onFileSelected($event)"
+             accept="image/*"
+             hidden>
+
+      <span class="hint">Haz clic para cambiar foto</span>
+
+    </div>
+
   </div>
 </mat-dialog-content>
 

@@ -17,6 +17,7 @@ export class ModalComponent implements OnInit {
     telefono: FormControl<string | null>;
     correo: FormControl<string | null>;
     username: FormControl<string | null>;
+    foto: FormControl<string | null>;
   }>;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -29,7 +30,8 @@ export class ModalComponent implements OnInit {
       apellidoMaterno: '',
       telefono: '',
       correo: '',
-      username: ''
+      username: '',
+      foto: ''
     };
 
     this.usuarioForm = new FormGroup({
@@ -38,8 +40,25 @@ export class ModalComponent implements OnInit {
       apellidoMaterno: new FormControl(usuario.apellidoMaterno),
       telefono: new FormControl(usuario.telefono, [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       correo: new FormControl(usuario.correo, [Validators.required, Validators.email]),
-      username: new FormControl(usuario.username, [Validators.required, Validators.minLength(4)])
+      username: new FormControl(usuario.username, [Validators.required, Validators.minLength(4)]),
+      foto: new FormControl(usuario.foto || null)
     });
+  }
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        this.usuarioForm.patchValue({
+          foto: reader.result as string
+        });
+      };
+
+      reader.readAsDataURL(file);
+    }
   }
 
   get formulario() { return this.usuarioForm.controls; }

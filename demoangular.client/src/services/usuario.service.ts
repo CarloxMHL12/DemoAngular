@@ -37,11 +37,14 @@ export class UsuarioService {
   }
 
   UsuarioUpdate(usuario: Usuario) {
-    const index = this.usuarios.findIndex(usuario => usuario.id === usuario.id);
+
+    const index = this.usuarios.findIndex(usuarioUpdate => usuarioUpdate.id === usuario.id);
+
     if (index !== -1) {
       this.usuarios[index] = usuario;
       this.guardarEnLocalStorage();
     }
+
   }
 
   UsuarioDelete(id: number) {

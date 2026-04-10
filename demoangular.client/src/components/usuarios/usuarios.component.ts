@@ -24,7 +24,8 @@ export class UsuariosComponent implements OnInit {
     apellidoMaterno: '',
     telefono: '',
     correo: '',
-    username: ''
+    username: '',
+    foto: ''
   };
 
   constructor(private usuarioService: UsuarioService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
@@ -61,6 +62,9 @@ export class UsuariosComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((usuarioEditado: Usuario) => {
       if (usuarioEditado) {
+
+        usuarioEditado.id = usuario.id;
+
         this.usuarioService.UsuarioUpdate(usuarioEditado);
         this.usuarios = this.usuarioService.UsuarioGetAll();
 

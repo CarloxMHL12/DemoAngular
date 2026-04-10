@@ -21,7 +21,13 @@
 
       <mat-card-header>
         <div mat-card-avatar class="avatar">
-          {{ usuario.nombre.charAt(0) }}
+          <img *ngIf="usuario.foto; else inicial"
+               [src]="usuario.foto"
+               class="avatar-img">
+
+          <ng-template #inicial>
+            {{ usuario.nombre.charAt(0) }}
+          </ng-template>
         </div>
 
         <mat-card-title>

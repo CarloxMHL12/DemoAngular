@@ -7,4 +7,5 @@ export interface Usuario {
   correo: string;
 
   username: string;
+  foto: string;
 }

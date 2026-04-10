@@ -121,6 +121,12 @@ button[mat-raised-button] {
   height: 40px;
 }
 
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 mat-card-content p {
   display: flex;
   align-items: center;
