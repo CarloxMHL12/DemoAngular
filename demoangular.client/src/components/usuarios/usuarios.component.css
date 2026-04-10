@@ -1,51 +1,9 @@
-.form-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-mat-card {
-  border-radius: 12px;
-}
-
-button {
-  margin-top: 10px;
-}
-
-.header-card {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
 .container {
   max-width: 1300px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-.form-card {
-  padding: 20px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.form-actions {
-  text-align: right;
 }
 
 .cards-container {
@@ -63,8 +21,8 @@ button {
 }
 
   .user-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
   }
 
 .card-header {
@@ -75,66 +33,29 @@ button {
   align-items: flex-end;
 }
 
-mat-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  font-size: 20px;
-}
-
-mat-card {
-  border-radius: 16px;
-}
-
-mat-toolbar {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-
-button[mat-raised-button] {
-  border-radius: 8px;
-}
-
-.toolbar {
-  padding: 0 20px;
-  background: linear-gradient(135deg, #283593, #303F9F);
-  color: white;
-}
-
-.toolbar-content {
+.card-body {
+  text-align: center;
+  padding-top: 55px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 
-.title {
+.card-actions {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-
-.avatar {
-  background: linear-gradient(135deg, #1A237E, #6366f1);
-  color: white;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  gap: 10px;
+  padding-bottom: 10px;
 }
 
-.avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .card-actions button {
+    background: #f3f4f6;
+    transition: 0.3s;
+  }
+
+    .card-actions button:hover {
+      background: #e5e7eb;
+    }
 
 .avatar-large {
   width: 90px;
@@ -158,42 +79,8 @@ button[mat-raised-button] {
   .avatar-large span {
     font-size: 28px;
     font-weight: 600;
-    letter-spacing: 1px;
     color: #303F9F;
   }
-
-mat-card-content p {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0;
-  color: #374151;
-}
-
-.toolbar-content .title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.toolbar-content button {
-  background: #10b981;
-  color: white;
-}
-
-  .toolbar-content button:hover {
-    background: #059669;
-  }
-
-.card-body {
-  text-align: center;
-  padding-top: 55px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
 
 .user-name {
   margin: 0;
@@ -223,24 +110,51 @@ mat-card-content p {
   color: #6366f1;
 }
 
-.card-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding-bottom: 10px;
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(30, 58, 138, 0.92);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0 24px;
+  height: 72px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-  .card-actions button {
-    background: #f3f4f6;
-    transition: 0.3s;
-  }
+.toolbar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .card-actions button:hover {
-      background: #e5e7eb;
-    }
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
 
-.user-username {
-  margin: 4px 0 12px;
-  color: #6b7280;
-  font-size: 14px;
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.12);
+}
+
+.primary-action mat-icon {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(0deg);
+  will-change: transform;
+}
+
+.primary-action:hover mat-icon {
+  transform: rotate(180deg);
 }

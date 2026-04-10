@@ -1,14 +1,18 @@
-<mat-toolbar color="primary" class="toolbar">
+<mat-toolbar class="toolbar">
   <div class="toolbar-content">
+
     <div class="title">
-      <mat-icon>groups</mat-icon>
+      <div class="logo">
+        <mat-icon>groups</mat-icon>
+      </div>
       <span>Gestión de Usuarios</span>
     </div>
 
-    <button mat-raised-button color="accent" (click)="abrirModal()">
+    <button mat-raised-button class="primary-action" (click)="abrirModal()">
       <mat-icon>person_add</mat-icon>
       Nuevo Usuario
     </button>
+
   </div>
 </mat-toolbar>
 
