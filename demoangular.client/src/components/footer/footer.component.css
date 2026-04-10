@@ -1,0 +1,42 @@
+.app-footer {
+  background: linear-gradient(135deg, #303F9F, #1A237E);
+  color: white;
+  padding: 15px 20px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.footer-center {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer-right {
+  display: flex;
+  gap: 8px;
+}
+
+  .footer-right button {
+    color: white;
+    transition: 0.3s;
+  }
+
+    .footer-right button:hover {
+      transform: scale(1.2);
+      color: #c7d2fe;
+    }

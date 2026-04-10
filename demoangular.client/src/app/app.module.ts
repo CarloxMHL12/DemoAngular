@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UsuariosComponent } from '../components/usuarios/usuarios.component';
+import { FooterComponent } from '../components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,10 +24,10 @@ import { ConfirmDialogComponent } from '../components/confirm-dialog/confirm-dia
 
 @NgModule({
   declarations: [
-    AppComponent, UsuariosComponent, ModalComponent, ConfirmDialogComponent
+    AppComponent, UsuariosComponent, ModalComponent, ConfirmDialogComponent, FooterComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule ,MatDividerModule ,MatSnackBarModule, MatIconModule, MatDialogModule, BrowserAnimationsModule, MatInputModule, MatButtonModule, MatCardModule, MatTableModule, MatFormFieldModule, MatToolbarModule
+    BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, MatDividerModule, MatSnackBarModule, MatIconModule, MatDialogModule, BrowserAnimationsModule, MatInputModule, MatButtonModule, MatCardModule, MatTableModule, MatFormFieldModule, MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
