@@ -19,34 +19,46 @@
   <div class="cards-container">
     <mat-card class="user-card" *ngFor="let usuario of usuarios">
 
-      <mat-card-header>
-        <div mat-card-avatar class="avatar">
+      <div class="card-header">
+
+        <div class="avatar-large">
           <img *ngIf="usuario.foto; else inicial"
-               [src]="usuario.foto"
-               class="avatar-img">
+               [src]="usuario.foto">
 
           <ng-template #inicial>
-            {{ usuario.nombre.charAt(0) }}
+            <span>
+              {{ (usuario.nombre?.charAt(0) || '') + (usuario.apellidoPaterno?.charAt(0) || '').toUpperCase() }}
+            </span>
           </ng-template>
         </div>
 
-        <mat-card-title>
-          {{ usuario.nombre }} {{ usuario.apellidoPaterno }} {{usuario.apellidoMaterno}}
-        </mat-card-title>
+      </div>
 
-        <mat-card-subtitle>
+      <mat-card-content class="card-body">
+
+        <h3 class="user-name">
+          {{ usuario.nombre }} {{ usuario.apellidoPaterno }} {{ usuario.apellidoMaterno}}
+        </h3>
+
+        <p class="user-username">
           @{{ usuario.username }}
-        </mat-card-subtitle>
-      </mat-card-header>
+        </p>
 
-      <mat-divider></mat-divider>
+        <div class="user-info">
+          <p>
+            <mat-icon>phone</mat-icon>
+            {{ usuario.telefono }}
+          </p>
 
-      <mat-card-content>
-        <p><mat-icon>phone</mat-icon> {{ usuario.telefono }}</p>
-        <p><mat-icon>email</mat-icon> {{ usuario.correo }}</p>
+          <p>
+            <mat-icon>email</mat-icon>
+            {{ usuario.correo }}
+          </p>
+        </div>
+
       </mat-card-content>
 
-      <mat-card-actions align="end">
+      <mat-card-actions class="card-actions">
         <button mat-icon-button color="primary" (click)="UsuarioUpdate(usuario)">
           <mat-icon>edit</mat-icon>
         </button>

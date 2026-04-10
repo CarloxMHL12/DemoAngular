@@ -20,13 +20,14 @@ button[color="primary"] {
   }
 
 button[mat-dialog-close] {
-  background: #e5e7eb; 
+  background: #e5e7eb;
 }
 
 .avatar-upload {
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-column: span 2;
   margin-top: 10px;
 }
 
@@ -85,3 +86,35 @@ button[mat-dialog-close] {
   font-weight: bold;
   color: #4f46e5;
 }
+
+
+.custom-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4f46e5;
+  margin-bottom: 0;
+}
+
+.custom-content {
+  display: block;
+  padding: 20px 24px 10px 24px !important;
+  margin-top: 4px;
+  overflow: visible;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+  .form-grid mat-form-field {
+    width: 100%;
+  }
+
+    .form-grid mat-form-field:nth-child(5),
+    .form-grid mat-form-field:nth-child(6) {
+      grid-column: span 2;
+    }

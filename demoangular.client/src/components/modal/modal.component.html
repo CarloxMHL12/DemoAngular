@@ -1,11 +1,11 @@
-<h2 mat-dialog-title class="modal-title">
+<h2 mat-dialog-title class="modal-title custom-title">
   <mat-icon>
     {{ data.modo === 'editar' ? 'edit' : 'person_add' }}
   </mat-icon>
   {{ data.modo === 'editar' ? 'Editar Usuario' : 'Nuevo Usuario' }}
 </h2>
 
-<mat-dialog-content class="modal-content">
+<mat-dialog-content class="modal-content custom-content">
   <div class="form-grid">
 
     <mat-form-field appearance="outline">
@@ -61,12 +61,12 @@
 
         <ng-template #placeholder>
           <span class="initial">
-            {{ formulario['nombre'].value?.charAt(0) || '?' }}
+            {{((formulario['nombre'].value?.charAt(0) || '') +(formulario['apellidoPaterno'].value?.charAt(0) || '')).toUpperCase() || '?'}}
           </span>
         </ng-template>
 
         <div class="overlay">
-          <mat-icon>photo_camera</mat-icon>
+          <mat-icon>photo</mat-icon>
         </div>
       </div>
 
